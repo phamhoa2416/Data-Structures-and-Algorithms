@@ -38,10 +38,21 @@ public class Stack {
     }
 
     public int pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
         int result = top.data;
         top = top.next;
         length--;
         return result;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        } else {
+            return top.data;
+        }
     }
 
     public static void main(String[] args) {
